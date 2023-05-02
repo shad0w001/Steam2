@@ -1,0 +1,67 @@
+﻿@model FastSteamCopy.Services.ViewModels.GameViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<form method="post" asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">
+    <div class="container">
+        <div class="col-md-12 col-lg-12">
+            <article class="post vt-post">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Developer)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Developer)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Publisher)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Publisher)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ReleaseDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ReleaseDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Genre)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Genre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Platform)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Platform)
+                    </dd>
+                </dl>
+            </article>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-10 offset-2 row">
+            <div class="col">
+                <div class="col">
+                    <input type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Game" value="Delete" />
+                </div>
+            </div>
+            <div class="col">
+                <a asp-action="Index" class="btn btn-info">Back</a>
+            </div>
+        </div>
+    </div>
+</form>

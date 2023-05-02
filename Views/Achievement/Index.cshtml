@@ -1,0 +1,47 @@
+﻿@model List<FastSteamCopy.Services.ViewModels.AchievementViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="col">
+    <a asp-action="Create" class="btn btn-info w-50">Make New Achievement</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Name</p>
+            </th>
+            <th>
+                <p>Description</p>
+            </th>
+            <th>
+                <p>Title</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Games.Title)
+                </td>
+                <td>
+                    <a asp-action="Update" asp-controller="Achievement" asp-route-id="@item.Id">Update</a> |
+                    <a asp-action="Details" asp-controller="Achievement" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-controller="Achievement" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

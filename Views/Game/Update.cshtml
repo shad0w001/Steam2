@@ -1,0 +1,61 @@
+﻿@model FastSteamCopy.Services.ViewModels.GameViewModel
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<h4>Game</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Update">
+            <div class="container">
+                <div class="col-md-12 col-lg-12">
+                    <article class="post vt-post">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+                                <div class="caption">
+                                    <p><label for="Title" class="form-label">Title:</label></p>
+                                    <input type="text" class="form-control" asp-for="Title"/>
+
+                                    <p><label for="Developer" class="form-label">Developer:</label></p>
+                                    <input type="text" class="form-control" asp-for="Developer" />
+
+                                    <p><label for="Publisher" class="form-label">Publisher:</label></p>
+                                    <input type="text" class="form-control" asp-for="Publisher" />
+
+                                    <p><label for="Price" class="form-label">Release Date:</label></p>
+                                    <input type="text" class="form-control" asp-for="ReleaseDate" />
+
+                                    <p><label for="Genre" class="form-label">Genre:</label></p>
+                                    <input type="text" class="form-control" asp-for="Genre" />
+
+                                    <p><label for="Platform" class="form-label">Platform:</label></p>
+                                    <input type="text" class="form-control" asp-for="Platform" />
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-10 offset-2 row">
+                    <div class="col">
+                        <input type="submit" class="btn btn-info" asp-action="Update" asp-controller="Game" value="Update" />
+                    </div>
+                    <div class="col">
+                        <a asp-action="Index" class="btn btn-danger w-100">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
